@@ -91,11 +91,13 @@ export function Hero() {
           <div className="lg:col-span-5 relative flex flex-col justify-center">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-[#D8C9B0] bg-[#143B45]/5 aspect-[4/3] lg:aspect-auto lg:h-[470px] group">
               <img
-                src="/src/assets/images/hero_cookies_house_exterior_1792053636686.jpg"
+                src="/images/hero_cookies_house_exterior.jpg"
                 alt="Façade de Cookies House Djerba à Midoun"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
                 loading="eager"
-                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.src = "/src/assets/images/hero_cookies_house_exterior_1792053636686.jpg";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0E282F]/85 via-transparent to-black/10 pointer-events-none" />
 

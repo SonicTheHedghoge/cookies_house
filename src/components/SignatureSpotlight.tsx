@@ -20,7 +20,8 @@ export function SignatureSpotlight() {
   const signatures = [
     {
       item: crookie!,
-      image: '/src/assets/images/gourmet_crookies_pistache_1792053637423.jpg',
+      image: '/images/gourmet_crookies_pistache.jpg',
+      fallback: '/src/assets/images/gourmet_crookies_pistache_1792053637423.jpg',
       badge: 'Le Buzz Parisien',
       title: 'Crookies Pistache Éclats',
       price: '9,900 DT (Mini: 5,000 DT)',
@@ -28,7 +29,8 @@ export function SignatureSpotlight() {
     },
     {
       item: dubaiCookie!,
-      image: '/src/assets/images/cookies_dubai_chocolate_1792053638419.jpg',
+      image: '/images/cookies_dubai_chocolate.jpg',
+      fallback: '/src/assets/images/cookies_dubai_chocolate_1792053638419.jpg',
       badge: 'Création Virale',
       title: 'Cookies Chocolat Dubaï & Kunafa',
       price: '9,000 DT',
@@ -36,7 +38,8 @@ export function SignatureSpotlight() {
     },
     {
       item: icedLatte!,
-      image: '/src/assets/images/iced_caramel_cookie_latte_1792053638576.jpg',
+      image: '/images/iced_caramel_cookie_latte.jpg',
+      fallback: '/src/assets/images/iced_caramel_cookie_latte_1792053638576.jpg',
       badge: 'Boisson Culte',
       title: 'Cookie Iced Latte Ripple',
       price: '12,000 DT',
@@ -77,8 +80,12 @@ export function SignatureSpotlight() {
                     src={sig.image}
                     alt={sig.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
                     loading="lazy"
+                    onError={(e) => {
+                      if (sig.fallback && e.currentTarget.src !== sig.fallback) {
+                        e.currentTarget.src = sig.fallback;
+                      }
+                    }}
                   />
                   <div className="absolute top-3 left-3 bg-[#1A4B58]/90 text-white text-[11px] font-semibold px-2.5 py-1 rounded-md backdrop-blur-xs">
                     {sig.badge}

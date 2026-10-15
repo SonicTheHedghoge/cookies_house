@@ -33,11 +33,13 @@ export function AtmosphereSection() {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-xl border border-[#D8C9B0] aspect-[4/3]">
               <img
-                src="/src/assets/images/cafe_interior_lounge_1792053637633.jpg"
+                src="/images/cafe_interior_lounge.jpg"
                 alt="Intérieur cosy du salon Cookies House Djerba à Midoun"
                 className="w-full h-full object-cover"
                 loading="lazy"
-                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.src = "/src/assets/images/cafe_interior_lounge_1792053637633.jpg";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
