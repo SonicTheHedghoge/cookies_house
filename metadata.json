@@ -1,0 +1,6 @@
+{
+  "name": "Cookies House Djerba",
+  "description": "Boutique Artisanal Cookies, Crookies, Gourmet Brunch & Specialty Coffee Shop in Midoun, Djerba, Tunisia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
